@@ -53,3 +53,6 @@ jobs:
       run: |
         source venv/bin/activate
         pytest
+[flake8]
+exclude = venv
+max-line-length = 88
