@@ -20,15 +20,15 @@ jobs:
     - name: Lint with flake8
       run: |
         source venv/bin/activate
-        flake8 .
+        flake8 . --exclude=venv
     - name: Check import sorting with isort
       run: |
         source venv/bin/activate
-        isort . --check-only
+        isort . --check-only --skip=venv
     - name: Check code formatting with black
       run: |
         source venv/bin/activate
-        black . --check
+        black . --check --exclude=venv
     - name: Type check with mypy
       run: |
         source venv/bin/activate
@@ -53,6 +53,3 @@ jobs:
       run: |
         source venv/bin/activate
         pytest
-[flake8]
-exclude = venv
-max-line-length = 88
